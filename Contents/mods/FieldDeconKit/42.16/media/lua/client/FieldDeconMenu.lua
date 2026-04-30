@@ -36,11 +36,15 @@ end
 
 FieldDeconMenu.RefillSpray = function(player, spray)
     local inv = player:getInventory()
-    local tablet = inv:getFirstTypeRecurse(TABLET_TYPE)
-    if not tablet then return end
+    local tablet = inv:getFirstType(TABLET_TYPE)
+    if not tablet then
+        HaloTextHelper.addBadText(player, "No NBC Tablets found")
+        return
+    end
     inv:Remove(tablet)
+    spray:getModData().deconCharges = 20
     if instanceof(spray, "DrainableComboItem") then
-        spray:setUsedDelta(1.0)
+        pcall(function() spray:setUsedDelta(1.0) end)
     end
     HaloTextHelper.addGoodText(player, "Spray Refilled")
 end
@@ -59,7 +63,17 @@ local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, te
     end
     if not square then return end
 
-    context:addOption("Decontaminate Area", player, FieldDeconMenu.SprayDecontaminate, square, spray)
+    local option = context:addOption("Decontaminate Area", player, FieldDeconMenu.SprayDecontaminate, square, spray)
+
+    -- Gray out when empty (mirrors the "Refill" disabled-with-tooltip pattern)
+    local charges = spray:getModData().deconCharges
+    if charges == nil then charges = 20 end
+    if charges <= 0 then
+        local tooltip = ISToolTip:new()
+        option.notAvailable = true
+        tooltip.description = "Spray is empty — refill with NBC Tablets"
+        option.toolTip = tooltip
+    end
 end
 
 local function onFillInventoryObjectContextMenu(playerNum, context, items)
@@ -73,11 +87,11 @@ local function onFillInventoryObjectContextMenu(playerNum, context, items)
     if not item or item:getFullType() ~= SPRAY_TYPE then return end
 
     local option = context:addOption("Refill with NBC Tablets", player, FieldDeconMenu.RefillSpray, item)
-    local hasTablet = player:getInventory():containsTypeRecurse(TABLET_TYPE)
+    local hasTablet = player:getInventory():containsType(TABLET_TYPE)
     if not hasTablet then
         local tooltip = ISToolTip:new()
         option.notAvailable = true
-        tooltip.description = "Need NBC Tablets"
+        tooltip.description = "No NBC Tablets found"
         option.toolTip = tooltip
     end
 end

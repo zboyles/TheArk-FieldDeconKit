@@ -86,10 +86,22 @@ function TADecontaminate:stop()
     ISBaseTimedAction.stop(self)
 end
 
+local TOTAL_CHARGES = 20
+
 function TADecontaminate:perform()
     scrubArea(self.character)
     spawnMist(self.character)
-    -- charge tracking parked until the runtime drainable API is confirmed
+    -- Track charges in modData and only ever WRITE to UsedDelta — never read
+    -- it. getUsedDelta throws on this build's drainable items even when
+    -- wrapped in pcall, ticking the error counter on every spray.
+    if instanceof(self.spray, "DrainableComboItem") then
+        local md = self.spray:getModData()
+        local charges = md.deconCharges or TOTAL_CHARGES
+        charges = charges - 1
+        if charges < 0 then charges = 0 end
+        md.deconCharges = charges
+        pcall(function() self.spray:setUsedDelta(charges / TOTAL_CHARGES) end)
+    end
     ISBaseTimedAction.perform(self)
 end
 

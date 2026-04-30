@@ -7,7 +7,13 @@ module Base
         ItemType = base:drainable,
         Icon = Decon9,
         Weight = 1.0,
-        UseDelta = 0.05,
+        UseDelta = 0.0001,
+        ActivatedItem = false,
+        DisappearOnUse = false,
+        KeepOnDeplete = true,
+        cantBeConsolided = true,
         AttachmentType = Bedroll,
+        StaticModel = FireExtinguisher,
+        WorldStaticModel = FireExtinguisher_Ground,
     }
 }
