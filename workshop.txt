@@ -12,5 +12,5 @@ description=- Attach to backpack bottom area.
 description=- Use when equipped in hand, attached to the backpack, or held in main inventory.
 description=
 description=Source: https://github.com/zboyles/TheArk-FieldDeconKit
-tags=Build 42;Items;Misc
+tags=Build 42;Items;Misc;QoL
 visibility=public
