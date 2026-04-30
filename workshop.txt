@@ -1,0 +1,10 @@
+version=1
+id=3716824012
+title=The Ark - Field Decon Kit
+description=Adds a handheld decontamination spray to The Ark.
+description=
+description=Right-click ground while equipped to scrub radiation contamination off
+description=items, bag contents, vehicle storage, dead-body loot, and your own
+description=inventory in an 11x11 tile area. Refill the spray with NBC Tablets.
+tags=Build 42;Building;Items;Misc
+visibility=private

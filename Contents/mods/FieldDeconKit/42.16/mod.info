@@ -1,0 +1,8 @@
+name=The Ark: Field Decon Kit
+poster=poster.png
+id=FieldDeconKit
+description=Handheld decontamination spray for The Ark. Right-click ground to 
+description=scrub radiation off items, bag contents, vehicle storage, dead-body, 
+description=loot, and your inventory in an 11x11 tile area. Refill with NBC Tablets.
+author=zac.boyles
+require=\TheArk

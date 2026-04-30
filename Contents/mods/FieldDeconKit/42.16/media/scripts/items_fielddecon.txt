@@ -1,0 +1,12 @@
+module Base
+{
+    item Decon9
+    {
+        DisplayCategory = Tool,
+        DisplayName = DECON-9,
+        ItemType = base:drainable,
+        Icon = Decon9,
+        Weight = 3.0,
+        UseDelta = 0.05,
+    }
+}

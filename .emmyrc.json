@@ -1,0 +1,30 @@
+{
+    "$schema": "https://raw.githubusercontent.com/EmmyLuaLs/emmylua-analyzer-rust/refs/heads/main/crates/emmylua_code_analysis/resources/schema.json",
+    "workspace": {
+        "library": [
+            "~/Library/Application Support/Steam/steamapps/common/ProjectZomboid/Project Zomboid.app/Contents/Java/Workshop/shared/Umbrella"
+        ]
+    },
+    "runtime": {
+        "extensions": [],
+        "frameworkVersions": [],
+        "nonstandardSymbol": [],
+        "requireLikeFunction": [],
+        "requirePattern": [
+            "shared/?.lua",
+            "client/?.lua",
+            "server/?.lua"
+        ],
+        "special": {},
+        "version": "Lua5.1"
+    },
+    "diagnostics": {
+        "diagnosticInterval": 500,
+        "disable": ["unnecessary-if"],
+        "enable": true,
+        "enables": [],
+        "globals": ["PZAPI"],
+        "globalsRegex": [],
+        "severity": {}
+    }
+}

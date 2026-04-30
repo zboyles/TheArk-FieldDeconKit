@@ -1,0 +1,15 @@
+{
+    "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+    "runtime.version": "Lua 5.1",
+    "workspace.library": [
+        "~/Library/Application Support/Steam/steamapps/common/ProjectZomboid/Project Zomboid.app/Contents/Java/Workshop/shared/Umbrella"
+    ],
+    "diagnostics.disable": [
+        "lowercase-global",
+        "undefined-global"
+    ],
+    "diagnostics.globals": [
+        "Events",
+        "ZombRand"
+    ]
+}
