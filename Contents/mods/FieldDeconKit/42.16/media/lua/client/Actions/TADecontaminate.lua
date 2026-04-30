@@ -65,8 +65,9 @@ end
 
 function TADecontaminate:isValid()
     if not self.spray then return false end
-    return self.character:getPrimaryHandItem() == self.spray
-        or self.character:getSecondaryHandItem() == self.spray
+    -- spray is valid as long as the character still has it on them — covers
+    -- held, attached to a bag slot, or loose in inventory
+    return self.spray:getContainer() ~= nil
 end
 
 function TADecontaminate:update() end

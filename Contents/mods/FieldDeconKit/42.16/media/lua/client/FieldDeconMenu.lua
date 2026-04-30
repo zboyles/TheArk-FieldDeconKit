@@ -8,10 +8,24 @@ local SPRAY_TYPE  = "Base.Decon9"
 local TABLET_TYPE = "Bandits.NBCTablets"
 
 local function findEquippedSpray(player)
+    -- Hand-held first (so an explicitly equipped spray wins over a stowed one).
     local prim = player:getPrimaryHandItem()
     if prim and prim:getFullType() == SPRAY_TYPE then return prim end
     local sec = player:getSecondaryHandItem()
     if sec and sec:getFullType() == SPRAY_TYPE then return sec end
+
+    -- Otherwise any spray on the player — covers slot-attached ("Attach" to a
+    -- bedroll-bottom slot, webbing, hotbar) AND loose in the main inventory.
+    -- Not recursing into sub-bags: the user has to take it out before use, same
+    -- as a fire extinguisher.
+    local inv = player:getInventory()
+    if inv then
+        local items = inv:getItems()
+        for i = 0, items:size() - 1 do
+            local it = items:get(i)
+            if it and it:getFullType() == SPRAY_TYPE then return it end
+        end
+    end
     return nil
 end
 

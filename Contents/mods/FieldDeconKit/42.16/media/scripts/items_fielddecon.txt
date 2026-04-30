@@ -6,7 +6,8 @@ module Base
         DisplayName = DECON-9,
         ItemType = base:drainable,
         Icon = Decon9,
-        Weight = 3.0,
+        Weight = 1.0,
         UseDelta = 0.05,
+        AttachmentType = Bedroll,
     }
 }
