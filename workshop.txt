@@ -7,4 +7,4 @@ description=Right-click ground while equipped to scrub radiation contamination o
 description=items, bag contents, vehicle storage, dead-body loot, and your own
 description=inventory in an 11x11 tile area. Refill the spray with NBC Tablets.
 tags=Build 42;Building;Items;Misc
-visibility=private
+visibility=public
