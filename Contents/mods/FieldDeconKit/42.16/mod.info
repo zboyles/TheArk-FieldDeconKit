@@ -1,5 +1,6 @@
 name=The Ark: Field Decon Kit
 poster=poster.png
+icon=icon.png
 id=FieldDeconKit
 description=Handheld decontamination spray for The Ark. Right-click ground to 
 description=scrub radiation off items, bag contents, vehicle storage, dead-body, 
