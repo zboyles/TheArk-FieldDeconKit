@@ -1,0 +1,6 @@
+{
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Tooltip.schema.json",
+    "Tooltip_FieldDecon_SprayEmpty": "Spray is empty - refill with NBC Tablets",
+    "Tooltip_FieldDecon_NoNBCTabletsFound": "No NBC Tablets found",
+    "Tooltip_FieldDecon_SprayRefilled": "Spray Refilled"
+}

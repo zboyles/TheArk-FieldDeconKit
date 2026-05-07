@@ -1,0 +1,5 @@
+{
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/ContextMenu.schema.json",
+    "ContextMenu_FieldDecon_DecontaminateArea": "Decontaminate Area",
+    "ContextMenu_FieldDecon_RefillWithNBCTablets": "Refill with NBC Tablets"
+}

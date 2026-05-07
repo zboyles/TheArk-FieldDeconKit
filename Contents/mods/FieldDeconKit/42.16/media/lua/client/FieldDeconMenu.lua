@@ -38,7 +38,7 @@ FieldDeconMenu.RefillSpray = function(player, spray)
     local inv = player:getInventory()
     local tablet = inv:getFirstType(TABLET_TYPE)
     if not tablet then
-        HaloTextHelper.addBadText(player, "No NBC Tablets found")
+        HaloTextHelper.addBadText(player, getText("Tooltip_FieldDecon_NoNBCTabletsFound"))
         return
     end
     inv:Remove(tablet)
@@ -46,7 +46,7 @@ FieldDeconMenu.RefillSpray = function(player, spray)
     if instanceof(spray, "DrainableComboItem") then
         pcall(function() spray:setUsedDelta(1.0) end)
     end
-    HaloTextHelper.addGoodText(player, "Spray Refilled")
+    HaloTextHelper.addGoodText(player, getText("Tooltip_FieldDecon_SprayRefilled"))
 end
 
 local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, test)
@@ -63,7 +63,7 @@ local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, te
     end
     if not square then return end
 
-    local option = context:addOption("Decontaminate Area", player, FieldDeconMenu.SprayDecontaminate, square, spray)
+    local option = context:addOption(getText("ContextMenu_FieldDecon_DecontaminateArea"), player, FieldDeconMenu.SprayDecontaminate, square, spray)
 
     -- Gray out when empty (mirrors the "Refill" disabled-with-tooltip pattern)
     local charges = spray:getModData().deconCharges
@@ -71,7 +71,7 @@ local function onFillWorldObjectContextMenu(playerNum, context, worldObjects, te
     if charges <= 0 then
         local tooltip = ISToolTip:new()
         option.notAvailable = true
-        tooltip.description = "Spray is empty — refill with NBC Tablets"
+        tooltip.description = getText("Tooltip_FieldDecon_SprayEmpty")
         option.toolTip = tooltip
     end
 end
@@ -86,12 +86,12 @@ local function onFillInventoryObjectContextMenu(playerNum, context, items)
     end
     if not item or item:getFullType() ~= SPRAY_TYPE then return end
 
-    local option = context:addOption("Refill with NBC Tablets", player, FieldDeconMenu.RefillSpray, item)
+    local option = context:addOption(getText("ContextMenu_FieldDecon_RefillWithNBCTablets"), player, FieldDeconMenu.RefillSpray, item)
     local hasTablet = player:getInventory():containsType(TABLET_TYPE)
     if not hasTablet then
         local tooltip = ISToolTip:new()
         option.notAvailable = true
-        tooltip.description = "No NBC Tablets found"
+        tooltip.description = getText("Tooltip_FieldDecon_NoNBCTabletsFound")
         option.toolTip = tooltip
     end
 end
