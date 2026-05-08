@@ -1,0 +1,6 @@
+{
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Tooltip.schema.json",
+    "Tooltip_FieldDecon_SprayEmpty": "喷雾已耗尽 请用三防消毒片补充",
+    "Tooltip_FieldDecon_NoNBCTabletsFound": "未找到三防消毒片",
+    "Tooltip_FieldDecon_SprayRefilled": "喷雾已补充完毕"
+}

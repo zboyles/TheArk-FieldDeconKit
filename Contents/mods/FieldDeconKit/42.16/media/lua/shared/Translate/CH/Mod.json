@@ -1,0 +1,5 @@
+{
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/Mod.schema.json",
+    "name": "方舟 野外消毒套件",
+    "description": "方舟模組專用手持消毒噴霧 右鍵地面可清理11x11格子範圍內物品 背包物資 車輛儲物 屍體戰利品以及自身背包的輻射污染 可使用三防消毒藥錠補充藥劑"
+}

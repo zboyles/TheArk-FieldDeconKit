@@ -1,0 +1,5 @@
+{
+    "$schema": "https://raw.githubusercontent.com/pz-wiki-modding/pz-translation-data/refs/heads/main/PZ_Translation_Schemas/ContextMenu.schema.json",
+    "ContextMenu_FieldDecon_DecontaminateArea": "區域消毒",
+    "ContextMenu_FieldDecon_RefillWithNBCTablets": "補充三防消毒藥錠"
+}
