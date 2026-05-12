@@ -16,4 +16,25 @@ module Base
         StaticModel = FireExtinguisher,
         WorldStaticModel = FireExtinguisher_Ground,
     }
+
+    craftRecipe MakeDecon9
+    {
+        timedAction = Making,
+        time = 200,
+        category = Miscellaneous,
+        Tags = AnySurfaceCraft,
+        NeedToBeLearn = false,
+
+        inputs
+        {
+            item 2 [Base.TinCanEmpty] mode:destroy,
+            item 1 [Bandits.GeigerCounter] mode:destroy,
+            item 10 [Bandits.NBCTablets] mode:destroy,
+            item 1 tags[base:sharpknife] mode:keep flags[IsNotDull;MayDegradeLight],
+        }
+        outputs
+        {
+            item 1 Base.Decon9,
+        }
+    }
 }
