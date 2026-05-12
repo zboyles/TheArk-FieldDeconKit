@@ -7,6 +7,7 @@ description=Right-click ground while equipped to scrub radiation contamination o
 description=items, bag contents, vehicle storage, dead-body loot, and your own
 description=inventory in an 11x11 tile area.
 description=
+description=- Craft Decon9 with items from the Ark.
 description=- Refill the spray with NBC Tablets.
 description=- Attach to backpack bottom area.
 description=- Use when equipped in hand, attached to the backpack, or held in main inventory.
